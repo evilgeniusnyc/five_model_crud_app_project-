@@ -1,0 +1,11 @@
+<h1>Project Manager Show Page</h1>
+<h2> Name: <%= @project_manager.full_name %></h2>
+<h3> Nick Name: <i><%= @project_manager.nick_name %></i></h3>
+<h4> Bio: <%= @project_manager.bio %></i></h4>
+<hr> 
+<h5> Projects:
+<% @project_manager.projects.map do |project| %>
+  <%= project.name %>
+
+<% end %>
+

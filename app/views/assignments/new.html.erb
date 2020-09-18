@@ -1,0 +1,11 @@
+<h1> Create a New Assignment </h1>
+
+<%= form_for(@assignment) do |f| %>
+    <%= f.label :project_manager %><br>
+    <%= f.collection_select :project_manager_id, ProjectManager.all, :id, :full_name %><br>
+    <br>
+    <%= f.label :project %><br>
+    <%= f.collection_select :project_id, Project.all, :id, :name %><br>
+    <br>
+    <%= f.submit "New Assignment" %>
+  <% end %>

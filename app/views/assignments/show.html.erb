@@ -1,0 +1,13 @@
+<h1> Assignment Show Page </h1>
+
+    <%= @assignment.assignment_name %>  <br>
+    
+    <%= form_for @assignment do |f| %>
+        <%= f.label :development_stage %>
+        <%= f.text_field :development_stage %> <br/>
+        <%= f.submit "Update Development Stage" %>
+
+        <%end%>
+
+
+

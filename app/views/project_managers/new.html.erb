@@ -1,0 +1,18 @@
+<h1>Create a new Project Manager</h1>
+
+<%= form_for(@project_manager) do |f| %>
+
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %><br>
+  
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %><br>
+  
+    <%= f.label :nick_name %><br>
+    <%= f.text_field :nick_name  %><br>
+  
+    <%= f.label :bio %><br>
+    <%= f.text_field :bio  %><br>
+    <%= f.submit %>
+  <% end %>
+

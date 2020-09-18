@@ -1,0 +1,11 @@
+<h1> Investors Index Page </h1> 
+<hr> 
+<d1>
+<% @investors.each do |investor| %>
+    <dt><b><%= link_to investor.investor_name, investor_path(investor) %> </b></dt>
+
+   <dd> Points: <%= investor.points %> </dd>
+   <dd> Project: <%= investor.project.name %> </dd>
+
+   
+<%end %>

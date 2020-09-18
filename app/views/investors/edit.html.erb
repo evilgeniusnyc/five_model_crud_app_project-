@@ -1,0 +1,9 @@
+<h1> Edit Investor </h1>
+
+<%= form_for @investor do |f| %>
+  <%= f.label :investor_name %>
+  <%= f.text_field :investor_name %> <br/>
+  <%= f.label :points %>
+  <%= f.number_field :points %><br/>
+  <%= f.submit "Edit" %>
+<% end %>

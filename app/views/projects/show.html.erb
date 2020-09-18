@@ -1,0 +1,12 @@
+
+<h1>Project Show Page</h1>
+
+<h2> Project Name: <%= @project.name %></h2>
+<li> Project Budget: <%= @project.budget %></li> 
+<li> Development Stage: <%= @project.stage %></i></li>
+<% @project.investors.map do |investor| %>
+<li>  Investor Name: </b> <%= investor.investor_name %> </li>
+<li> Investor Points: </b> <%= investor.points %></li>
+
+<% end %>
+

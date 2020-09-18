@@ -1,0 +1,18 @@
+<h1>Create a new Investor</h1>
+
+<hr>
+<%= form_for(@investor) do |f| %>
+  <%= f.label :project %><br>
+  <%= f.collection_select :project_id, Project.all, :id, :name %><br>
+
+  <br>
+
+  <%= f.label :investor_name %><br>
+  <%= f.text_field :investor_name %><br>
+
+  <%= f.label :points %><br>
+  <%= f.number_field :points  %><br>
+
+
+  <%= f.submit "Invest Money" %>
+<% end %>

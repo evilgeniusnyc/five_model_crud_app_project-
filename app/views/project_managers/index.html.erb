@@ -1,0 +1,7 @@
+<h1>  Project Manager Index </h1> 
+
+    <% @project_managers.each do |project_manager|%>
+        <li> <%= link_to project_manager.full_name, project_manager_path(project_manager) %> </li>
+    <%end%>
+
+</ul>

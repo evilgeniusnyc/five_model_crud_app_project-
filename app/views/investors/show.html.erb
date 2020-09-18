@@ -1,0 +1,21 @@
+<h1> Investor Show Page </h1> 
+
+<p> Investor Name: <%= @investor.investor_name %></p>
+
+<p> Investment Points: <%= @investor.points %> 
+
+<%= button_to "Delete Investor #{@investor.investor_name}", @investor, :method => :delete %>
+
+<br> </br>
+
+<h2> Project Sponsor: </h2>
+<% @investor.project_sponsors.map do |project_sponsor| %>
+  <%= project_sponsor.sponsor_name %>
+
+
+<% end %>
+
+
+
+
+

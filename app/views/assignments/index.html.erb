@@ -1,0 +1,5 @@
+<h1> Assignments Index Page </h1> 
+
+<% @assignments.map do |assignment| %>
+    <%= link_to assignment.assignment_name, assignment_path(assignment) %><br>
+  <% end %>
