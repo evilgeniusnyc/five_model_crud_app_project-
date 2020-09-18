@@ -38,8 +38,7 @@ def destroy
 # goes through params with the model to find a investor instance and destroy it
 @investor = Investor.find(params[:id])
 Investor.destroy(params[:id])
-#redirect to the index page
-redirect_to investor_path
+redirect_to investors_path
 end
 
 private

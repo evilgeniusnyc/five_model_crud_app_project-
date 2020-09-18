@@ -1,21 +1,22 @@
 
 Assignment.destroy_all
-Investor.destroy_all 
 ProjectSponsor.destroy_all 
+Investor.destroy_all 
 Project.destroy_all
 ProjectManager.destroy_all
 
+
 Assignment.reset_pk_sequence
 Investor.reset_pk_sequence
-ProjectSponsor.reset_pk_sequence
 Project.reset_pk_sequence 
 ProjectManager.reset_pk_sequence 
+ProjectSponsor.reset_pk_sequence
 
 
 major_taylor = ProjectManager.create(first_name: "Marshall", nick_name: "Major", last_name: "Taylor", bio:"American bicycle racer Marshall Taylor (1878-1932) was the word’s first black sports superstar. He was world cycling champion in 1899, American sprint champion in 1900, and set seven track cycling records in 1898.  A year later, he was crowned national and international champion, making him just the second Black world champion athlete, after Canadian bantamweight boxer George Dixon.")
 eddie = ProjectManager.create(first_name: "Eddy", nick_name: "The Cannibal", last_name: "Merckx", bio: "Born June 17, 1945, Eddy Merckx is a Belgian former professional road and track bicycle racer who is widely seen as the most successful rider in the history of competitive cycling. His victories include an unequalled eleven Grand Tours (five Tours of France, five Tours of Italy, and a Tour of Spain), all of the five Monuments, three World Championships, the hour record, every major one-day race other than Paris–Tours, and extensive victories on the track.")
 beyrl = ProjectManager.create(first_name: "Beryl", nick_name: "Mile-a-Minute", last_name: "Burton", bio: "Beryl Burton (1937 – 5 May 1996) was an English racing cyclist who dominated women’s cycle racing in the UK, winning more than 90 domestic championships and seven world titles, and setting numerous national records. She set a women's record for the 12-hour time-trial which exceeded the men's record for two years.")
-bernard = ProjectManager.create(first_name: "Bernard", nick_name: "The Badger", last_name: "Hinault", bio:"Born 14 November 1954, Bernard Hinault is a French former professional cyclist. With 147 professional victories,[1] including five in the Tour de France, he is often named among the greatest cyclists of all time.")
+bernard = ProjectManager.create(first_name: "Bernard", nick_name: "The Badger", last_name: "Hinault", bio:"Born 14 November 1954, Bernard Hinault is a French former professional cyclist. With 147 professional victories, including five in the Tour de France, he is often named among the greatest cyclists of all time.")
 jacques = ProjectManager.create(first_name: "Jacques", nick_name: "Monsiuer Chrono", last_name: "Anquetil", bio:"Jacques Anquetil (January 1934 – 18 November 1987) was a French road racing cyclist and the first cyclist to win the Tour de France five times, in 1957 and from 1961 to 1964.  He stated before the 1961 Tour that he would gain the yellow jersey on day one and wear it all through the tour, a tall order with two previous winners in the field—Charly Gaul and Federico Bahamontes—but he did it.  His victories in stage races such as the Tour were built on an exceptional ability to ride alone against the clock in individual time trial stages, which lent him the name 'Monsieur Chrono'.")
 
 derailer = Project.create(name: "Build a Better Derailleur", budget: "$1.3 million", stage: 1)
@@ -24,12 +25,10 @@ saddle = Project.create(name: "Build a Better Saddle ", budget: "$1.2 million ",
 fork = Project.create(name: "Build a Better Fork", budget: "$3 million ", stage: 5)
 lock = Project.create(name: "Build a Better Bike Lock", budget: "$2.2 million", stage: 5)
 
-
-dd = Assignment.create(assignment_name: "Debug Deraileur", project_id: 1, project_manager_id: 1)
-da = Assignment.create(assignment_name: "Debug Aerobar", project_id:2, project_manager_id: 2)
-ddb = Assignment.create(assignment_name: "Debug Bike Seat", project_id: 3, project_manager_id: 3)
-df = Assignment.create(assignment_name: "Debug Fork", project_id: 4, project_manager_id: 4)
-cb = Assignment.create(assignment_name: "Catch Bike Theif", project_id: 5, project_manager_id: 5)
+bike_lock = Assignment.create(assignment_name: "Test Bike Lock", project_manager: ProjectManager.third, project: Project.third)
+tighten_bolts = Assignment.create(assignment_name: "Tighten Bolts", project_manager: ProjectManager.fourth, project: Project.fourth)
+polish_frame = Assignment.create(assignment_name: "Polish Frame", project_manager: ProjectManager.second, project: Project.second)
+drop_bars = Assignment.create(assignment_name: "Install Drop Bars", project_manager: ProjectManager.first, project: Project.first)
 
 
 moe = Investor.create(investor_name: "Moe Howard", points: 10, project_id: 1)

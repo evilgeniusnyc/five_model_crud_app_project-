@@ -5,30 +5,44 @@ class AssignmentsController < ApplicationController
     end
     def show
         @assignment = Assignment.find(params[:id])
+        @projects = Project.all
+        @project_managers = ProjectManager.all
     end
+
     def new
         @assignment = Assignment.new
-        # @project_manager = ProjectManager.all
-        # @project = Project.all
     end
+
     def create
-        @assignment = Assignment.create(assignment_params)
-        redirect_to project_manager_path(@assignment.program_manager)
+    @assigment = Assignment.create(assignment_params)
+    redirect_to assignments_path
     end
 
+    def edit
+    # digesting the request: crompiling data for the form from the model
+    @assigment = Assignment.find(params[:id])
+    # response: render edit form view
+    end
+
+# patch '/investor/:id'
     def update
-        # goes through params and checks in with the model to update a the instance
-        @assignment = Assignment.find(params[:id])
-  
-        # response: redirect to the '/assignment/:id', which triggers the show action
-        redirect_to assignment_path(@assignment)
-        end
-    private 
+    # goes through params and checks in with the model to update a the instance
+    @assignment = Assignment.find(params[:id])
+    assignment_params = params.require(:assignment).permit(:assignment_name, :development_stage)
+    @assignment.update(assignment_params)
+# response: redirect to the '/investor/:id', which triggers the show action
+    redirect_to assignment_path(@assigment)
+    end
 
-    def assignment_params
-       params.require(:assignment).permit(:assignment_name, :development_stage, :project_manager_id, :project_id)
-     end
+ 
 
+private
+
+def assignment_params
+    params.require(:assignment).permit(:assignment_name, :development_stage, :project_manager_id, :project_id)
+  end
+
+   
 
 end
 

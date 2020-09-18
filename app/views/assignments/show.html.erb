@@ -1,13 +1,21 @@
 <h1> Assignment Show Page </h1>
 
-    <%= @assignment.assignment_name %>  <br>
+<p> Assignment Name: <%= @assignment.assignment_name %></p>
     
     <%= form_for @assignment do |f| %>
         <%= f.label :development_stage %>
         <%= f.text_field :development_stage %> <br/>
         <%= f.submit "Update Development Stage" %>
 
-        <%end%>
 
-
-
+        <%= button_to "Delete Assignment #{@assignment.assignment_name}", @assignment, :method => :delete %>
+        
+        <br> </br>
+        
+        <h2> Project Sponsor: </h2>
+        <% @assignment.project_manager.map do |project_manager| %>
+          <%= project_sponsor.sponsor_name %>
+        
+        
+        <% end %>
+        

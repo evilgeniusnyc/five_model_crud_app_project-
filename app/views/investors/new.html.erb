@@ -1,5 +1,5 @@
-<h1>Create a new Investor</h1>
-
+<h1>Create a New Investor</h1>
+<p>
 <hr>
 <%= form_for(@investor) do |f| %>
   <%= f.label :project %><br>
@@ -12,6 +12,8 @@
 
   <%= f.label :points %><br>
   <%= f.number_field :points  %><br>
+
+  <br>
 
 
   <%= f.submit "Invest Money" %>
